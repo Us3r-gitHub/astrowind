@@ -10,6 +10,7 @@ export interface AttributesProps extends HTMLAttributes<'img'> {}
 
 export interface ImageProps extends Omit<HTMLAttributes<'img'>, 'src'> {
   src?: string | ImageMetadata | null;
+  srcDark?: string | ImageMetadata | null;
   width?: string | number | null;
   height?: string | number | null;
   alt?: string | null;
