@@ -10,7 +10,7 @@ const {
   subtitle = await Astro.slots.render('subtitle'),
   tagline,
   content = await Astro.slots.render('content'),
-  callToAction,
+  actions = await Astro.slots.render('actions'),
   image = await Astro.slots.render('image'),
   isReversed = false,
   isAfterContent = false,
@@ -42,10 +42,19 @@ const {
     <div class={`md:flex ${isReversed ? 'md:flex-row-reverse' : ''} md:gap-16`}>
       <div class="md:basis-1/2 self-center">
         {content && <div class="text-lg dark:text-slate-400" set:html={content} />}
+
         {
-          callToAction && (
-            <div class="mt-8 flex w-auto">
-              <Button {...callToAction} />
+          actions && (
+            <div class="flex gap-4 my-4">
+              {Array.isArray(actions) ? (
+                actions.map((action) => (
+                  <div class="flex w-full sm:w-auto">
+                    <Button {...(action || {})} class="w-full" />
+                  </div>
+                ))
+              ) : (
+                <Fragment set:html={actions} />
+              )}
             </div>
           )
         }

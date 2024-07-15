@@ -284,7 +284,7 @@ export interface Content extends Omit<Headline, 'classes'>, Widget {
   columns?: number;
   isReversed?: boolean;
   isAfterContent?: boolean;
-  callToAction?: CallToAction;
+  actions?: string | CallToAction[];
 }
 
 export interface Contact extends Omit<Headline, 'classes'>, Form, Widget {}
