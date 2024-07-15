@@ -1,5 +1,6 @@
 import type { AstroComponentFactory } from 'astro/runtime/server/index.js';
 import type { HTMLAttributes, ImageMetadata } from 'astro/types';
+import type { ImageProps } from './utils/images-optimization';
 
 export interface Post {
   /** A unique ID number that identifies a post. */
@@ -109,6 +110,7 @@ export interface Headline {
   title?: string;
   subtitle?: string;
   tagline?: string;
+  taglines?: string[];
   classes?: Record<string, string>;
 }
 
@@ -182,6 +184,7 @@ export interface Disclaimer {
 
 // COMPONENTS
 export interface CallToAction extends Omit<HTMLAttributes<'a'>, 'slot'> {
+  isIconFirst?: boolean;
   variant?: 'primary' | 'secondary' | 'tertiary' | 'link';
   text?: string;
   icon?: string;
@@ -216,7 +219,7 @@ export interface Form {
 export interface Hero extends Omit<Headline, 'classes'>, Omit<Widget, 'isDark' | 'classes'> {
   content?: string;
   actions?: string | CallToAction[];
-  image?: string | unknown;
+  image?: string | ImageProps;
 }
 
 export interface Team extends Omit<Headline, 'classes'>, Widget {
@@ -237,6 +240,7 @@ export interface Testimonials extends Omit<Headline, 'classes'>, Widget {
 }
 
 export interface Brands extends Omit<Headline, 'classes'>, Widget {
+  iconsGroups?: Record<string, Array<string>>;
   icons?: Array<string>;
   images?: Array<Image>;
 }
@@ -275,7 +279,7 @@ export interface Steps extends Omit<Headline, 'classes'>, Widget {
 
 export interface Content extends Omit<Headline, 'classes'>, Widget {
   content?: string;
-  image?: string | unknown;
+  image?: string | ImageProps;
   items?: Array<Item>;
   columns?: number;
   isReversed?: boolean;
