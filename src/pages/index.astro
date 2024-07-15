@@ -37,36 +37,44 @@ const metadata = {
 
   <Content
     id="about"
-    title="About Me"
+    title="Welcome to my development journey!"
     image={{
       src: '~/assets/images/hero-image-white.png',
       alt: 'AstroWind Hero Image',
     }}
     isDark={true}
-    callToAction={{
-      isIconFirst: true,
-      icon: 'tabler:file-cv',
-      variant: 'primary',
-      text: 'Resume',
-      href: 'mailto:achsanh@gmail.com',
-    }}
+    actions={[
+      {
+        isIconFirst: true,
+        icon: 'tabler:file-cv',
+        text: 'Resume',
+        target: '_blank',
+        href: 'https://drive.google.com/file/d/1pKbRme01cAofbbXOUAIWYVQU4DDgunoq/view',
+      },
+      {
+        isIconFirst: true,
+        icon: 'tabler:mail',
+        variant: 'primary',
+        text: 'Hire Me',
+        href: 'mailto:achsanh@gmail.com',
+      },
+    ]}
   >
     <Fragment slot="content">
       <p>
-        Welcome to my development journey! As a dedicated web developer, I'm committed to digitalizing your needs and
-        elevating your digital presence with dynamic, cutting-edge web solutions.
+        As a dedicated web developer, I am passionate about transforming your needs into dynamic, cutting-edge web
+        solutions that elevate your digital presence. With over 4 years of hands-on experience and a solid track record
+        as a freelancer for the past 2 years, I am committed to continuously expanding my skills and embracing new
+        challenges to stay at the forefront of web technology.
       </p>
       <br />
       <p>
-        With over 4 years of expertise in JavaScript, and started in side work as freelancer since 2 years ago to expand
-        my skills and embrace new challenges. I thrive on mastering web frameworks, enhancing security measures
+        I am particularly interested in advancing my knowledge in web technologies, mastering web frameworks, improving
+        security measures, and exploring the potential of blockchain in web development. My goal is simple: to deliver
+        secure, integrated, and highly functional websites that stand out.
       </p>
-      <!-- <br />
-      <p>
-        My goal is simple: to deliver secure, integrated, and highly functional websites that blend innovation with
-        user-centric design. Let's collaborate and bring your ideas to life with top-tier front-end and back-end
-        solutions.
-      </p> -->
+      <br />
+      <p>Let's collaborate to bring your ideas to life with top-tier front-end and back-end solutions.</p>
     </Fragment>
   </Content>
 
