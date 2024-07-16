@@ -136,7 +136,7 @@ export interface Stat {
 
 export interface Item {
   title?: string;
-  description?: string;
+  description?: string | string[];
   icon?: string;
   classes?: Record<string, string>;
   callToAction?: CallToAction;
@@ -268,7 +268,7 @@ export interface Faqs extends Omit<Headline, 'classes'>, Widget {
 export interface Steps extends Omit<Headline, 'classes'>, Widget {
   items: Array<{
     title: string;
-    description?: string;
+    description?: string | string[];
     icon?: string;
     classes?: Record<string, string>;
   }>;

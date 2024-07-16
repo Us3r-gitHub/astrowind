@@ -41,10 +41,27 @@ const {
           <div class={`pt-1 ${index !== items.length - 1 ? 'pb-8' : ''}`}>
             {title && <p class={twMerge('text-xl font-bold', titleClass, itemClasses?.title)} set:html={title} />}
             {description && (
-              <p
-                class={twMerge('text-muted mt-2', descriptionClass, itemClasses?.description)}
-                set:html={description}
-              />
+              <>
+                {Array.isArray(description) ? (
+                  <ul>
+                    {description.map((desc) => (
+                      <li>
+                        <p
+                          class={twMerge('text-muted mt-2', descriptionClass, itemClasses?.description)}
+                          set:html={desc}
+                        />
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <div class="flex w-full sm:w-auto">
+                    <p
+                      class={twMerge('text-muted mt-2', descriptionClass, itemClasses?.description)}
+                      set:html={description}
+                    />
+                  </div>
+                )}
+              </>
             )}
           </div>
         </div>

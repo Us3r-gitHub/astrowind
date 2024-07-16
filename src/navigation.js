@@ -12,6 +12,6 @@ export const footerData = {
   ],
   // TODO: Update License URL
   footNote: `
-    Build with <a class="underline text-accent dark:text-white" href="https://github.com/onwidget/astrowind/"> Astro</a> · Templates by <a class="underline text-accent dark:text-white" href="https://github.com/onwidget/astrowind/"> AstroWind</a>
+    Build with <a class="underline text-accent dark:text-white" target="_blank" href="https://github.com/onwidget/astrowind/"> Astro</a> · Templates by <a class="underline text-accent dark:text-white" target="_blank" href="https://github.com/onwidget/astrowind/"> AstroWind</a>
   `,
 };
